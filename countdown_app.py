@@ -114,9 +114,9 @@ button_1 = tk.Button(
 
 button_2 = tk.Button(
     root,
-    text='START',
+    text='STOP',
     state=tk.NORMAL,
-    command=start)
+    command=stop)
 
 # 各列の割合を指定
 for i in range(4):
@@ -139,4 +139,8 @@ button_2.grid(column=3, row=2, sticky='n')
 
 root.mainloop()
 
-if timer !=None: timer.cancel()
+# if timer !=None: timer.cancel()
+
+# プログラム終了時にタイマーが残っていればキャンセル
+if timer is not None:
+    timer.cancel()
